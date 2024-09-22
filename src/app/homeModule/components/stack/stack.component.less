@@ -1,0 +1,65 @@
+@import url("../../../../settings/style-variables.less");
+
+:host(app-stack) {
+    display: flex;
+
+    .stack-container {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        margin-top: 7px;
+
+        font-family: "Montserrat-Bold";
+        text-transform: uppercase;
+        font-size: 1vw;
+        letter-spacing: 0.2em;
+        color: @black;
+
+        @media @sub4k {
+            font-size: .7vw;
+        }
+
+        @media @sub1080p {
+            font-size: .8vw;
+        }
+
+        @media @sub720p {
+            font-size: 1.5vw;
+        }
+
+        @media @subTablet {
+            font-size: 1.6vw;
+        }
+
+        @media @subSmallTablet {
+            font-size: 1.75vw;
+        }
+
+        @media @subMobile {
+            font-size: 2.3vw;
+        }
+
+        .tech-name {
+            z-index: 2;
+            margin: 5px;
+            padding: 5px 10px;
+            border: 1px solid @black;
+            border-radius: 7px;
+
+            -webkit-text-stroke: 1px @black;
+
+            &:hover {
+                cursor: pointer;
+                background-color: @black;
+                color: @brat-green;
+                -webkit-text-stroke: 0;
+
+                transition: background-color, color 100ms linear;
+                -o-transition: background-color, color 100ms linear;
+                -ms-transition: background-color, color 100ms linear;
+                -webkit-transition: background-color, color 100ms linear;
+            }
+        }
+    }
+}
+

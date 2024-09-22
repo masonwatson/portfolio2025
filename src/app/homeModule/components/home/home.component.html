@@ -1,0 +1,15 @@
+<ng-container *ngIf="{
+    isHandheld: ['subTablet', 'subSmallTablet', 'subMobile'].includes((mediaBreakpoint$ | async))
+} as data">
+    <div class="home-container flex preserve-3D">
+        <div class="stage-container flex preserve-3D">
+            <app-projects [mediaBreakpoint$]="mediaBreakpoint$"></app-projects>
+            <ng-container *ngIf="isStackReadyForRender$ | async">
+                <app-stack></app-stack>
+            </ng-container>
+        </div>
+    </div>
+    <ng-container *ngIf="!data.isHandheld">
+        <app-footer></app-footer>
+    </ng-container>
+</ng-container>

@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("./settings/style-variables.less");
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    background-color: @brat-green;
+    overflow-x: hidden;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// body {
+//     min-width: 320px;
+//     // min-height: 100vh;
+//     margin: 0;
+// }
+
+// a {
+//     text-rendering: optimizeLegibility;
+// }
+
+// html, body {
+//     overscroll-behavior: auto;
+//     box-sizing: border-box;
+//     scrollbar-gutter: stable;
+// }
+
+// h1, h2, h3, h4, h4, h5, h6 {
+//     margin: 0;
+//     padding: 0;
+//     line-height: 1.2em;
+// }
+
+// p {
+//     margin: 0;
+//     line-height: 1.2em;
+// }
+
+// #root {
+//     width: 100vw;
+// }
+
+// * {
+//     box-sizing: border-box;
+// }
+  
+.flex {
+    display: flex;
+}
+
+.preserve-3D {
+    transform-style: preserve-3d;
+}
+
+.parallax-perspective {
+    perspective-origin: 50% 50%;
+    will-change: perspective-origin;
+}

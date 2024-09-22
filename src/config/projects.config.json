@@ -1,0 +1,65 @@
+{
+    "projects" : [
+        {
+            "id": "proj-ttoo",
+            "name": "Tiff's Treats Online Ordering",
+            "link": "https://www.cookiedelivery.com/OnlineOrdering/Start/Orders/NewOrder/Delivery",
+            "stack": [
+                "Angular",
+                "TypeScript",
+                "RXJS",
+                "Redux",
+                "Kentico",
+                "ASP.NET",
+                "C#",
+                "Entity Framework",
+                "Microsoft SQL Server"
+            ]
+        },
+        {
+            "id": "proj-ttos",
+            "name": "Tiff's Treats Operating System",
+            "link": "https://www.cookiedelivery.com/OnlineOrdering/Start/Orders/NewOrder/Delivery",
+            "stack": [
+                "ASPX",
+                "JavaScript",
+                "jQuery",
+                "ASP.NET",
+                "C#",
+                "SQL",
+                "Microsoft SQL Server"
+            ]
+        },
+        {
+            "id": "proj-mb",
+            "name": "MovieBox",
+            "link": "https://masonwatson.github.io/client/",
+            "stack": [
+                "React",
+                "Redux",
+                "JavaScript",
+                "Node",
+                "Express",
+                "TMDB API"
+            ]
+        },
+        {
+            "id": "proj-pv",
+            "name": "Pathfinding Visulaizer",
+            "link": "https://masonwatson.github.io/pathfinding-visualizer/",
+            "stack": [
+                "React",
+                "JavaScript"
+            ]
+        },
+        {
+            "id": "proj-sav",
+            "name": "Sorting Algorithm Visulaizer",
+            "link": "https://masonwatson.github.io/sorting-visualizer/",
+            "stack": [
+                "React",
+                "JavaScript"
+            ]
+        }
+    ]
+}

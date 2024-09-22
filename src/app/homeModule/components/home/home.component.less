@@ -1,0 +1,17 @@
+.home-container,
+.stage-container {
+    flex-direction: column;
+}
+
+:host(app-home) {
+    display: flex;
+
+    .home-container {
+        width: 100%;
+
+        .stage-container {
+            align-items: flex-end;
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+@import url("../settings/style-variables.less");
+
+:host(app-route) {
+    display: flex;
+    
+    .app-container {
+        width: 100vw;
+        height: 100vh;
+    
+        @media @subTablet {
+            height: 100svh;
+        }
+    }
+}
