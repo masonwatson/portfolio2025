@@ -1,11 +1,13 @@
-<!-- <div class="footer-container"> -->
+<ng-container *ngIf="{
+    typedText: typedText$ | async
+} as data">
     <div class="info-container">
         <div class="sub-container">
             <span class="name">MASON WATSON</span>
         </div>
         <div class="sub-container">
             <div class="title">
-                <span class="info">software en</span>
+                <span class="info">software en{{data.typedText}}</span>
                 <span class="blinking-cursor"></span>
             </div>
         </div>
@@ -68,4 +70,4 @@
             </a>
         </li>
     </ul>
-<!-- </div> -->
+</ng-container>

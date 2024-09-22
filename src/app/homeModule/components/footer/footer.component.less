@@ -1,77 +1,85 @@
 @import url("../../../../settings/style-variables.less");
 
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 :host(app-footer) {
     display: flex;
     position: fixed;
     bottom: 0;
-    // .footer-container {
-        height: 70px;
-        box-sizing: border-box;
-        margin: 40px 55px;
+    height: 70px;
+    box-sizing: border-box;
+    margin: 40px 55px;
+
+    display: flex;
     
+    z-index: 1;
+
+    font-size: 1.3em;
+
+    .info {
+        font-family: Poppins-Regular;
+    }
+
+    .info-container {
+        width: 580px;
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
         
-        z-index: 1;
-    
-        font-size: 1.3em;
-    
-        .info {
-            font-family: Poppins-Regular;
+        .name {
+            font-family: Poppins-ExtraBold;
+            letter-spacing: 0.45rem;
         }
-    
-        .info-container {
-            width: 580px;
+
+        .title {
+            .blinking-cursor::after {
+                content: "|";
+                animation: blink 1.2s step-start infinite;
+            }
+        }
+
+        .sub-container {
             display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            
-            .name {
-                font-family: Poppins-ExtraBold;
-                letter-spacing: 0.45rem;
+            flex: 0 0 50%;
+        }
+    }
+
+    .links-container {
+        width: 442px;
+        margin: 0;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        list-style: none;
+
+        li {
+            flex: 0 0 33.3333%;
+
+            .link-num {
+                font-size: 0.7em;
             }
-    
-            .title {
-                .blinking-cursor::after {
-                    content: "|";
-                    animation: blink 1.2s step-start infinite;
+
+            .link {
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
                 }
             }
-    
-            .sub-container {
-                display: flex;
-                flex: 0 0 50%;
+
+            a {
+                color: @black;
+                text-decoration: none;
             }
         }
-    
-        .links-container {
-            width: 442px;
-            margin: 0;
-    
-            display: flex;
-            flex-wrap: wrap;
-    
-            list-style: none;
-    
-            li {
-                flex: 0 0 33.3333%;
-    
-                .link-num {
-                    font-size: 0.7em;
-                }
-    
-                .link {
-                    cursor: pointer;
-    
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-    
-                a {
-                    color: @black;
-                    text-decoration: none;
-                }
-            }
-        }
-    // }
+    }
 }

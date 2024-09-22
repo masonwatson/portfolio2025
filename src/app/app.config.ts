@@ -9,6 +9,7 @@ import { ProjectsService } from '../services/projects.service';
 import { homeUIReducer, initialState } from './homeModule/state/home-ui.reducer';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ResponsiveService } from '../services/responsive.service';
+import { TypewriterService } from '../services/typewriter.service';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -27,5 +28,6 @@ export const appConfig: ApplicationConfig = {
         provideAnimations(),
         ProjectsService,
         ResponsiveService,
+        TypewriterService,
     ]
 };
