@@ -3,7 +3,7 @@
 } as data">
     <div class="stack-container flex" [@stack]>
         <div class="tech-name" [@techRendered]
-            *ngFor="let tech of data.activeItem.stack"
+            *ngFor="let tech of data?.activeItem?.stack"
         >{{tech}}</div>
     </div>
 </ng-container>

@@ -1,26 +1,21 @@
 <ng-container *ngIf="{ 
     projects: projects$ | async,
-    degree: ['subTablet', 'subSmallTablet', 'subMobile'].includes((mediaBreakpoint$ | async)) ? '25' : '45'
+    activeItemID: activeItemID$ | async
 } as data">
     <div class="projects-container flex projects-perspective parallax-perspective preserve-3D" [@projects]>
-        <ng-container *ngFor="let project of data.projects;">
-            <ng-container *ngIf="{
-                isActiveItem: (activeItemID$ | async) === project.id,
-                thereIsActiveItem: !!(activeItemID$ | async),
-            } as conditions">
-                <div
-                    class="project-container preserve-3D" 
-                    [@projectRendered]="{value: 'projectRendered', params: { degree: data.degree }}" 
-                    [@projectCeded]="{value: 'projectCeded', params: { degree: data.degree }}" 
-                    [ngClass]="conditions.isActiveItem ? 'active' : conditions.thereIsActiveItem ? 'inactive' : ''"
+        <ng-container *ngFor="let project of data?.projects;">
+            <div
+                class="project-container preserve-3D" 
+                [@projectRendered]="{value: 'projectRendered', params: { degree: degree }}" 
+                [@projectCeded]="{value: 'projectCeded', params: { degree: degree }}" 
+                [ngClass]="data.activeItemID === project.id ? 'active' : !!data.activeItemID ? 'inactive' : ''"
+            >
+                <span class="project-name"
+                    (click)="handleItemClick(project)"
                 >
-                    <span class="project-name"
-                        (click)="handleItemClick(project)"
-                    >
-                        {{project.name}}
-                    </span>
-                </div>
-            </ng-container>
+                    {{project.name}}
+                </span>
+            </div>
         </ng-container>
     </div>
 </ng-container>

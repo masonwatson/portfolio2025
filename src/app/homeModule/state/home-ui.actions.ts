@@ -27,4 +27,16 @@ export const ClearActiveItem = createAction(
 export const RemoveProject = createAction(
     '[HOME] RemoveProject',
     props<{ id: string }>()
+);
+
+export const ClearProjects = createAction(
+    '[HOME] ClearProjects',
+)
+
+export const ResetProjects = createAction(
+    '[HOME] ResetProjects',
+)
+
+export const ResetState = createAction(
+    '[HOME] ResetState'
 )

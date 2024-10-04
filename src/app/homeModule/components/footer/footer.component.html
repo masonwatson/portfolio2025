@@ -1,73 +1,69 @@
-<ng-container *ngIf="{
-    typedText: typedText$ | async
-} as data">
-    <div class="info-container">
-        <div class="sub-container">
-            <span class="name">MASON WATSON</span>
-        </div>
-        <div class="sub-container">
-            <div class="title">
-                <span class="info">software en{{data.typedText}}</span>
-                <span class="blinking-cursor"></span>
-            </div>
-        </div>
-        <div class="sub-container">
-            <span class="info">austin, texas</span>
-        </div>
-        <div class="sub-container">
-            <span class="info">masonxwork&#64;gmail.com</span>
+<div class="info-container">
+    <div class="sub-container">
+        <span class="name">MASON WATSON</span>
+    </div>
+    <div class="sub-container">
+        <div class="title">
+            <span class="info">software en{{typedText}}</span>
+            <span class="blinking-cursor"></span>
         </div>
     </div>
-    <ul class="links-container">
-        <li>
+    <div class="sub-container">
+        <span class="info">austin, texas</span>
+    </div>
+    <div class="sub-container">
+        <span class="info">masonxwork&#64;gmail.com</span>
+    </div>
+</div>
+<ul class="links-container">
+    <li>
+        <span class="link">
+            <span class="link-num">01&nbsp;&nbsp;</span>
+            <strong>about</strong>
+        </span>
+    </li>
+    <li>
+        <a href="https://github.com/masonwatson"
+            target="_blank"
+            rel="noreferrer"
+        >
             <span class="link">
-                <span class="link-num">01&nbsp;&nbsp;</span>
-                <strong>about</strong>
+                <span class="link-num">02&nbsp;&nbsp;</span>
+                <strong>resume</strong>
             </span>
-        </li>
-        <li>
-            <a href="https://github.com/masonwatson"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <span class="link">
-                    <span class="link-num">02&nbsp;&nbsp;</span>
-                    <strong>resume</strong>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://github.com/masonwatson"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <span class="link">
-                    <span class="link-num">02&nbsp;&nbsp;</span>
-                    <strong>github</strong>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/masonxw/"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <span class="link">
-                    <span class="link-num">02&nbsp;&nbsp;</span>
-                    <strong>linkedin</strong>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://twitter.com/mxwcode"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <span class="link">
-                    <span class="link-num">02&nbsp;&nbsp;</span>
-                    <strong>twitter</strong>
-                </span>
-            </a>
-        </li>
-    </ul>
-</ng-container>
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/masonwatson"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <span class="link">
+                <span class="link-num">03&nbsp;&nbsp;</span>
+                <strong>github</strong>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/in/masonxw/"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <span class="link">
+                <span class="link-num">04&nbsp;&nbsp;</span>
+                <strong>linkedin</strong>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/mxwcode"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <span class="link">
+                <span class="link-num">05&nbsp;&nbsp;</span>
+                <strong>twitter</strong>
+            </span>
+        </a>
+    </li>
+</ul>

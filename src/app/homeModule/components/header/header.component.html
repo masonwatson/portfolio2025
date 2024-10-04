@@ -1,1 +1,23 @@
-<p>header works!</p>
+<div class="left-container flex">
+    <ng-container *ngIf="isHandheld">
+        <span class="name">MASON WATSON</span>
+        <div class="title">
+            <span class="info">software en{{typedText}}</span>
+            <span class="blinking-cursor"></span>
+        </div>
+    </ng-container>
+</div>
+<div class="right-container flex">
+    <button class="header-button flex" (click)="handleHeaderButtonClick()">
+        <ng-container *ngIf="isHandheld; else desktop">
+            <span class="bar bar-1" [@topBarTransform]="!thereIsActiveItem ? 'flat' : 'angled'"></span>
+            <span class="bar bar-2" [@middleBarTransform]="!thereIsActiveItem ? 'visible' : 'invisible'"></span>
+            <span class="bar bar-3" [@bottomBarTransform]="!thereIsActiveItem ? 'flat' : 'angled'"></span>
+        </ng-container>
+        <ng-template #desktop>
+            <span class="bar bar-1 desktop"></span>
+            <span class="bar bar-2 desktop"></span>
+            <span class="bar bar-3 desktop"></span>
+        </ng-template>
+    </button>
+</div>

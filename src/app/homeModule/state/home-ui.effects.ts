@@ -3,9 +3,9 @@ import { AppState } from "../../app.state";
 import { Store } from "@ngrx/store";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { concatLatestFrom } from "@ngrx/operators"
-import { catchError, filter, from, interval, map, Observable, of, switchMap, takeUntil, tap, withLatestFrom } from "rxjs";
+import { catchError, filter, from, interval, map, Observable, of, switchMap, take, takeUntil, tap, withLatestFrom } from "rxjs";
 import { ProjectsService } from "../../../services/projects.service";
-import { LoadProjects, LoadProjectsFailure, LoadProjectsSuccess, RemoveProject, SetActiveItem } from "./home-ui.actions";
+import { ClearActiveItem, ClearProjects, LoadProjects, LoadProjectsFailure, LoadProjectsSuccess, RemoveProject, ResetProjects, ResetState, SetActiveItem } from "./home-ui.actions";
 import { selectActiveItemID, selectAllProjects } from "./home-ui.selectors";
 import { IProjectsModel } from "../models/projects.model";
 
@@ -49,6 +49,19 @@ export class HomeUIEffects {
             })
         ), {dispatch: false}
     );
+
+    resetProjects$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ResetProjects),
+            tap(() => {
+                // console.log("Resetting Projects...");
+                this.store.dispatch(ResetState());
+                setTimeout(() => {
+                    this.store.dispatch(LoadProjects());
+                }, 400);
+            })
+        ), {dispatch: false}
+    )
 
     constructor(
         private readonly store: Store<AppState>,

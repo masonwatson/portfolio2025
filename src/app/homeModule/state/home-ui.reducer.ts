@@ -1,12 +1,12 @@
 import { createReducer, on } from "@ngrx/store";
 import { IProjectsModel } from "../models/projects.model";
-import { ClearActiveItem, LoadProjects, LoadProjectsFailure, LoadProjectsSuccess, RemoveProject, SetActiveItem } from "./home-ui.actions";
+import { ClearActiveItem, ClearProjects, LoadProjects, LoadProjectsFailure, LoadProjectsSuccess, RemoveProject, ResetProjects, ResetState, SetActiveItem } from "./home-ui.actions";
 
 export interface HomeUIState {
     projects: IProjectsModel[];
     activeItemID: string | null;
     activeProject: IProjectsModel | undefined;
-    hoveredProjectID: string | null;
+    isProject: boolean,
     error: string | null;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
@@ -15,8 +15,8 @@ export const initialState: HomeUIState = {
     projects: [],
     activeItemID: null,
     activeProject: undefined,
+    isProject: false,
     error: null,
-    hoveredProjectID: null,
     status: 'pending',
 };
 
@@ -43,21 +43,34 @@ export const homeUIReducer = createReducer(
     })),
 
     // set the active item, whether it be a project or a nav item
-    on(SetActiveItem, (state, {id, project}) => ({
+    on(SetActiveItem, (state, {id, project, isProject}) => ({
         ...state,
         activeItemID: id,
-        activeProject: project
+        activeProject: project,
+        isProject: isProject
     })),
 
     // handle clear of the current active item
     on(ClearActiveItem, (state) => ({
         ...state,
         activeItemID: null,
-        activeProject: undefined
+        activeProject: undefined,
+        isProject: false
     })),
     
     on(RemoveProject, (state, {id}) => ({
         ...state,
         projects: [...state.projects.filter(project => project.id !== id)]
-    }))
+    })),
+    
+    on(ClearProjects, (state) => ({
+        ...state,
+        projects: []
+    })),
+
+    on(ResetProjects, (state) => ({
+        ...state
+    })),
+
+    on(ResetState, () => initialState)
 )

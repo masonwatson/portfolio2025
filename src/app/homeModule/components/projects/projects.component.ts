@@ -21,10 +21,14 @@ import { SetActiveItem } from '../../state/home-ui.actions';
   ]
 })
 export class ProjectsComponent implements OnInit {
-    @Input() mediaBreakpoint$: Observable<any>;
+    @Input() isHandheld: boolean;
 
     projects$: Observable<any>;
     activeItemID$: Observable<any>;
+
+    get degree(): string {
+        return this.isHandheld ? '25' : '45';
+    }
 
     constructor(
         private store: Store<AppState>,
