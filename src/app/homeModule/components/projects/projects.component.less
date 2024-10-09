@@ -41,6 +41,10 @@
 
             &:not(.active, .inactive):hover {
                 transform: rotate3d(0, 1, 0, -35deg) translateZ(0) scale(1) !important;
+
+                @media @subTablet {
+                    transform: rotate3d(0, 1, 0, -15deg) translateZ(0) scale(1) !important;
+                }
             }
 
             .project-name {

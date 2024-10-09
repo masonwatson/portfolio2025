@@ -18,7 +18,7 @@
             <app-details></app-details>
         </ng-container>
     </div>
-    <ng-container *ngIf="!isHandheld">
-        <app-footer [typedText]="data.typedText"></app-footer>
+    <ng-container *ngIf="!isHandheld && !data.thereIsActiveItem">
+        <app-footer [@footerCedeed] [typedText]="data.typedText"></app-footer>
     </ng-container>
 </ng-container>

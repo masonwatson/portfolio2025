@@ -12,6 +12,7 @@ import { HeaderComponent } from '../header/header.component';
 import { TypewriterService } from '../../../../services/typewriter.service';
 import { headerRendered } from '../../../../settings/header.animation';
 import { DetailsComponent } from '../details/details.component';
+import { footerCedeed } from '../../../../settings/home.animation';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +28,8 @@ import { DetailsComponent } from '../details/details.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
   animations: [
-    headerRendered
+    headerRendered,
+    footerCedeed
   ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
