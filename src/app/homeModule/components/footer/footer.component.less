@@ -15,6 +15,7 @@
     font-size: 1.3em;
 
     .info {
+        color: @black;
         font-family: Poppins-Regular;
     }
 
@@ -25,12 +26,16 @@
         flex-direction: column;
         
         .name {
+            color: @black;
             font-family: Poppins-ExtraBold;
+            text-transform: uppercase;
             letter-spacing: 0.45rem;
         }
 
         .title {
+            color: @black;
             .blinking-cursor::after {
+                color: @black;
                 content: "|";
                 animation: blink 1.2s step-start infinite;
             }
@@ -59,6 +64,8 @@
             }
 
             .link {
+                color: @black;
+                font-family: Poppins-Regular;
                 cursor: pointer;
 
                 &:hover {

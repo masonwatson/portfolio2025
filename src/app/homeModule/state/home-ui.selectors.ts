@@ -19,6 +19,11 @@ export const selectThereIsActiveItem = createSelector(
     (activeItem) => !!activeItem
 )
 
+export const selectIsProject = createSelector(
+    selectHomeUI,
+    (state: HomeUIState) => state.isProject
+)
+
 export const selectActiveProject = createSelector(
     selectHomeUI,
     (state: HomeUIState) => state.activeProject

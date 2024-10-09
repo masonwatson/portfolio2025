@@ -1,0 +1,28 @@
+<ng-container *ngIf="{
+    isProject: isProject$ | async,
+    activeProject: activeProject$ | async,
+    isStackReadyForRender: isStackReadyForRender$ | async
+} as data">
+    <div class="details-container flex" [@detailsRendered]>
+        <div class="non-project-detail-container flex" *ngIf="!data.isProject; else projectDetails">
+            <span class="name">{{data.activeProject.name}}</span>
+            <ng-container *ngIf="data.isStackReadyForRender">
+                <app-stack></app-stack>
+            </ng-container>
+            <div class="about-container flex">
+                <div class="timer-text-container flex">
+                    <p>
+                        Hi, my name is Mason. I am a forward-thinking Software Engineer 
+                        that is constantly learning. <app-timer></app-timer> has passed 
+                        since my first "Hello World".
+                    </p>
+                </div>
+            </div>
+        </div>
+        <ng-template #projectDetails>
+            <div class="about-container flex">
+                Hello!
+            </div>
+        </ng-template>
+    </div>
+</ng-container>

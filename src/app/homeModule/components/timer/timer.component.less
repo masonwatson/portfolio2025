@@ -1,0 +1,39 @@
+@import url("../../../../settings/style-variables.less");
+
+:host(app-timer) {
+    span {
+        display: inline-block;
+        text-align: center;
+        overflow-x: visible;
+
+        width: 120px;
+
+        @media @sub4k {
+            width: 110px;
+        }
+
+        @media @sub1440p {
+            width: 90px;
+        }
+
+        @media @sub1080p {
+            width: 70px;
+        }
+
+        @media @sub720p {
+            width: 55px;
+        }
+
+        @media @subTablet {
+            width: 40px;
+        }
+
+        @media @subSmallTablet {
+            width: 35px;
+        }
+
+        @media @subMobile {
+            width: 30px;
+        }
+    }
+}

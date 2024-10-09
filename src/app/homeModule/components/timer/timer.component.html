@@ -1,0 +1,5 @@
+<ng-container *ngIf="{
+    timer: timer$ | async
+} as data">
+    {{data.timer?.years}} years, {{data.timer?.days}} days, <span>{{data.timer?.hours}}</span> hours, <span>{{data.timer?.minutes}}</span> minutes, and <span>{{data.timer?.seconds}}</span> seconds
+</ng-container>

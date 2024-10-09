@@ -1,0 +1,15 @@
+{
+    "about": {
+        "id": "about",
+        "name": "About Me",
+        "stack": [
+            "Collaboration",
+            "Problem-Solving",
+            "Empathy",
+            "Creativity",
+            "Detail Oriention",
+            "Adaptablity",
+            "Patience"
+        ]
+    }
+}
